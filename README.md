@@ -1,2 +1,2 @@
-# Basketball-Store
-One stop shopping platform for basketball players
+# HooperStore
+Featured Basketball Jerseys Available

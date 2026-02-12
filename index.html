@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HoopWear — Your ultimate basketball gear destination. Shop shoes, jerseys, balls & accessories.">
+    <title>HoopWear — The Ultimate Basketball Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Promo Bar -->
+    <div class="top-bar">🔥 FREE SHIPPING on orders above ₹2,000 — Use code HOOPER2026</div>
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#home" data-page="home" class="nav-logo">
+                <span class="logo-icon">🏀</span>
+                <span>HoopWear</span>
+            </a>
+
+            <div class="nav-search">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search shoes, jerseys, balls...">
+            </div>
+
+            <div class="nav-actions">
+                <a href="#home" data-page="home" class="nav-btn"><span class="btn-label">Home</span></a>
+                <a href="#shop" data-page="shop" class="nav-btn"><span class="btn-label">Shop</span></a>
+                <a href="#contact" data-page="contact" class="nav-btn"><span class="btn-label">Contact</span></a>
+                <a href="#login" data-page="login" class="nav-btn">👤 <span class="btn-label">Account</span></a>
+                <button class="nav-btn cart-btn" id="cartBtn">🛒 <span class="btn-label">Cart</span> <span
+                        class="cart-count" id="cartCount">0</span></button>
+            </div>
+
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== Category Bar ===== -->
+    <div class="cat-bar">
+        <div class="cat-bar-inner">
+            <button class="cat-tab active" data-cat="all">All Products</button>
+            <button class="cat-tab" data-cat="shoes">👟 Basketball Shoes</button>
+            <button class="cat-tab" data-cat="jerseys">👕 Jerseys</button>
+            <button class="cat-tab" data-cat="balls">⛹️ Basketballs</button>
+            <button class="cat-tab" data-cat="accessories">🎽 Accessories</button>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                PAGE SECTIONS                 -->
+    <!-- ============================================ -->
+
+    <!-- ===== HOME PAGE ===== -->
+    <section id="page-home" class="page-section active">
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">🏆 India's #1 Basketball Store</div>
+                <h1>Everything You Need<br>To <span class="hl">Own the Court</span></h1>
+                <p class="tagline">Your ultimate destination for basketball gear — from game-ready shoes to iconic
+                    jerseys. Elevate your game, one play at a time.</p>
+                <div class="hero-actions">
+                    <a href="#shop" data-page="shop" class="btn-hero primary">Shop All Products →</a>
+                    <a href="#shop/shoes" data-page="shop" data-cat="shoes" class="btn-hero secondary">🔥 Trending
+                        Shoes</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-num">80+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">15K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">4.8★</div>
+                        <div class="stat-label">Avg Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">24hr</div>
+                        <div class="stat-label">Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="cats-section">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Find everything you need to dominate the court</p>
+
+                <div class="cat-cards">
+                    <div class="cat-card" data-page="shop" data-cat="shoes" onclick="window.location.hash='shop/shoes'">
+                        <span class="cat-emoji">👟</span>
+                        <h3>Basketball Shoes</h3>
+                        <span class="cat-count">20 Products</span>
+                    </div>
+                    <div class="cat-card" data-page="shop" data-cat="jerseys"
+                        onclick="window.location.hash='shop/jerseys'">
+                        <span class="cat-emoji">👕</span>
+                        <h3>Jerseys</h3>
+                        <span class="cat-count">20 Products</span>
+                    </div>
+                    <div class="cat-card" data-page="shop" data-cat="balls" onclick="window.location.hash='shop/balls'">
+                        <span class="cat-emoji">⛹️</span>
+                        <h3>Basketballs</h3>
+                        <span class="cat-count">20 Products</span>
+                    </div>
+                    <div class="cat-card" data-page="shop" data-cat="accessories"
+                        onclick="window.location.hash='shop/accessories'">
+                        <span class="cat-emoji">🎽</span>
+                        <h3>Accessories</h3>
+                        <span class="cat-count">20 Products</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===== SHOP PAGE ===== -->
+    <section id="page-shop" class="page-section">
+        <div class="container">
+            <div class="shop-header">
+                <div>
+                    <h2 id="shopTitle">All Products</h2>
+                    <span class="result-count" id="resultCount">80 products</span>
+                </div>
+                <select id="sortSelect" class="sort-select">
+                    <option value="popular">Most Popular</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== LOGIN PAGE ===== -->
+    <section id="page-login" class="page-section">
+        <div class="auth-page">
+            <div class="auth-card">
+                <h2>Welcome Back</h2>
+                <p class="auth-sub">Sign in to your HoopWear account</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUser">Username</label>
+                        <input type="text" id="loginUser" placeholder="Enter username">
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPass">Password</label>
+                        <input type="password" id="loginPass" placeholder="Enter password">
+                        <div class="form-error"></div>
+                    </div>
+                    <button type="submit" class="btn-auth">Sign In</button>
+                    <div class="auth-links">
+                        <a href="#forgot" data-page="forgot">Forgot your password?</a>
+                        <a href="#register" data-page="register">New here? Create an account →</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REGISTER PAGE ===== -->
+    <section id="page-register" class="page-section">
+        <div class="auth-page">
+            <div class="auth-card">
+                <h2>Create Account</h2>
+                <p class="auth-sub">Join 15,000+ hoopers on HoopWear</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regUser">Username</label>
+                        <input type="text" id="regUser" placeholder="Min 6 characters">
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPass">Password</label>
+                        <input type="password" id="regPass" placeholder="Min 8 chars, upper + lower + number">
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regCPass">Confirm Password</label>
+                        <input type="password" id="regCPass" placeholder="Re-enter password">
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" placeholder="you@example.com">
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="regMobile">Mobile Number</label>
+                        <input type="tel" id="regMobile" placeholder="10-digit number">
+                        <div class="form-error"></div>
+                    </div>
+                    <button type="submit" class="btn-auth">Create Account</button>
+                    <div class="auth-links">
+                        <a href="#login" data-page="login">Already have an account? Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORGOT PASSWORD ===== -->
+    <section id="page-forgot" class="page-section">
+        <div class="auth-page">
+            <div class="auth-card">
+                <h2>Reset Password</h2>
+                <p class="auth-sub">We'll send a reset link to your email</p>
+                <form id="forgotForm">
+                    <div class="form-group">
+                        <label for="forgotEmail">Email Address</label>
+                        <input type="email" id="forgotEmail" placeholder="you@example.com">
+                        <div class="form-error"></div>
+                    </div>
+                    <button type="submit" class="btn-auth">Send Reset Link</button>
+                    <div class="auth-links">
+                        <a href="#login" data-page="login">← Back to Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT PAGE ===== -->
+    <section id="page-contact" class="page-section">
+        <div class="container contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We're here to help with orders, sizing & more</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="cc-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>support@hoopwear.com<br>We reply within 24 hours</p>
+                </div>
+                <div class="contact-card">
+                    <div class="cc-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>+91 93926 84209<br>Mon – Sat, 10am – 7pm IST</p>
+                </div>
+                <div class="contact-card">
+                    <div class="cc-icon">📍</div>
+                    <h3>Visit Our Store</h3>
+                    <p>HoopWear Basketball Store<br>530048, Visakhapatnam, AP, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-logo" style="margin-bottom:8px;">
+                    <span class="logo-icon">🏀</span>
+                    <span>HoopWear</span>
+                </div>
+                <p>Your ultimate destination for basketball gear. From the court to the street — we've got you covered.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="#shop/shoes" data-page="shop" data-cat="shoes">Basketball Shoes</a>
+                <a href="#shop/jerseys" data-page="shop" data-cat="jerseys">Jerseys</a>
+                <a href="#shop/balls" data-page="shop" data-cat="balls">Basketballs</a>
+                <a href="#shop/accessories" data-page="shop" data-cat="accessories">Accessories</a>
+            </div>
+            <div class="footer-col">
+                <h4>Account</h4>
+                <a href="#login" data-page="login">Sign In</a>
+                <a href="#register" data-page="register">Create Account</a>
+                <a href="#forgot" data-page="forgot">Reset Password</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#contact" data-page="contact">Contact Us</a>
+                <a href="#contact" data-page="contact">Shipping Info</a>
+                <a href="#contact" data-page="contact">Returns</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 HoopWear. All rights reserved. Built with 🏀 for hoopers, by hoopers.
+        </div>
+    </footer>
+
+    <!-- Cart Overlay & Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 Your Cart</h3>
+            <button class="cart-close" id="cartCloseBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
